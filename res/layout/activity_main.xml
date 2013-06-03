@@ -1,0 +1,61 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity" >
+
+    <EditText
+        android:id="@+id/etTotalAmt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="33dp"
+        android:ems="10"
+        android:hint="@string/tipAmtHint" />
+
+    <Button
+        android:id="@+id/btn10Pct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="30dp"
+        android:text="@string/tenPct" 
+        android:onClick="onTenPct"/>
+
+    <Button
+        android:id="@+id/btn15Pct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="@string/fifteenPct"
+        android:onClick="onFifteenPct" />
+
+    <Button
+        android:id="@+id/Button02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/etTotalAmt"
+        android:layout_centerVertical="true"
+        android:text="@string/twentyPct"
+        android:onClick="onTwentyPct" />
+
+    <TextView
+        android:id="@+id/tvTipAmt"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignLeft="@+id/etTotalAmt"
+        android:layout_alignRight="@+id/Button02"
+        android:layout_below="@+id/btn10Pct"
+        android:layout_marginTop="87dp"
+        android:text="Tip is"
+        android:textSize="25sp" />
+
+</RelativeLayout>
