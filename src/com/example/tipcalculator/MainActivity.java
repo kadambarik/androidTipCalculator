@@ -24,29 +24,27 @@ public class MainActivity extends Activity {
     }
     
     public void onTenPct(View view){
-    	EditText etTotalAmt = (EditText)findViewById(R.id.etTotalAmt);
-    	Double totalAmout = Double.valueOf(etTotalAmt.getText().toString().trim());
-    	double tip = totalAmout.doubleValue() * 0.1;
+    	
+    	calcTip(view, 0.1);
+    }
+
+
+	private void calcTip(View view, Double tipPct) {
+		EditText etTotalAmt = (EditText)findViewById(R.id.etTotalAmt);
+		Double totalAmout = Double.valueOf(etTotalAmt.getText().toString().trim());
+		if (totalAmout == null )
+			totalAmout = 0.0;
+    	double tip = totalAmout.doubleValue() * tipPct;
     	TextView tipView = (TextView)findViewById(R.id.tvTipAmt);
     	tipView.setText("Tip is : " + tip);
     	etTotalAmt.setText("");
-    }
+	}
     
     public void onFifteenPct(View view){
-    	EditText etTotalAmt = (EditText)findViewById(R.id.etTotalAmt);
-    	Double totalAmout = Double.valueOf(etTotalAmt.getText().toString().trim());
-    	double tip = totalAmout.doubleValue() * 0.15;
-    	TextView tipView = (TextView)findViewById(R.id.tvTipAmt);
-    	tipView.setText("Tip is : " + tip);
-    	etTotalAmt.setText("");
+    	calcTip(view, 0.15);
     }
     
     public void onTwentyPct(View view){
-    	EditText etTotalAmt = (EditText)findViewById(R.id.etTotalAmt);
-    	Double totalAmout = Double.valueOf(etTotalAmt.getText().toString().trim());
-    	double tip = totalAmout.doubleValue() * 0.2;
-    	TextView tipView = (TextView)findViewById(R.id.tvTipAmt);
-    	tipView.setText("Tip is : " + tip);
-    	etTotalAmt.setText("");
+    	calcTip(view, 0.2);
     }
 }
